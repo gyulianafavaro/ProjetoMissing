@@ -54,15 +54,7 @@ export default function Rotas() {
                     }}
 
                 />
-                <Tab.Screen
-                    name="Inserir"
-                    component={Inserir}
-                    options={{
-                        tabBarIcon: ({ color, size }) => (
-                            <MaterialCommunityIcons name="plus-box" color={color} size={size} />
-                        ),
-                    }}
-                />
+                
                 <Tab.Screen
                     name="Videos"
                     component={Videos}
