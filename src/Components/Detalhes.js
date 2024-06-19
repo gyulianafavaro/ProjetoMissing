@@ -14,28 +14,28 @@ export default function Detalhes({ handle, item, pessoa, pessoafoto }) {
     const [error, setError] = useState(false);
 
     async function SalvarObservacao() {
+     
         await fetch('http://10.139.75.27:5251/api/Observacoes/InsertObservacoes', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify({
-            observacaoId: observacaoId,
+          body: JSON.stringify({           
             observacaoDescricao: observacaoDescricao,
             observacaoLocal: observacaoLocal,
-            observacaoData: observacaoData,
+            observacaoData: "2024-06-18T23:44:26.414Z",
             pessoaId: pessoaId,
             usuarioId: usuarioId
           })
         })
       .then(res => res.json())
       .then(json => {
-       
-        setObservacaoDescricao(json.ObservacaoDescricao);
-        setObservacaoLocal(json.ObservacaoLocal);
-        setObservacaoData(json.ObservacaoData);
-        setPessoaId(json.pessoaId);
-        setUsuarioId(json.usuarioId);
+        alert("Observação cadastrada com sucesso!");
+        setObservacao('');
+        setObservacaoDescricao('');
+        setObservacaoLocal('');
+        setPessoaId('');
+        setUsuarioId('');
       })
       .catch(err => console.log(err));
   }
